@@ -1,0 +1,230 @@
+API REFERENCE
+=============
+
+
+Product List
+-------------
+
+
+List all products in the NextOrbit's Servers.
+
+
+
+**GET** /api/analysis/products/{offset}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+*Parameters*
+
+
+- ``offset`` [integer]:-    Number of objects returned per page. If not provided it returns the complete list of products.
+
+
+Request
+^^^^^^^
+
+.. code-block:: console
+
+	curl -X GET
+	https://analysis.nextorbit.com/api/analysis/products/{offset}
+	  -H 'apikey: Your API_KEY'
+	  -H 'apitoken: Your API_TOKEN'
+
+Response
+^^^^^^^^^
+
+Response packet will contain a JSON array of the list of products with information provided during product addition and an auto generated NextOrbit Identifier along with the product attributes specified.
+
+
+**Response Format**
+
+.. code-block:: javascript
+
+
+	[	
+	{
+		product_id: "string", 
+		product_name: "string", 
+		nextorbit_id: "string", 
+		product_description: "string", 
+		UPC/ EAN : "string" ,
+		product_attrs: object
+	}, 
+		{..}
+	]
+
+
+**Sample Response**
+
+.. code-block:: javascript
+
+
+	[	
+	{
+		"product_id": "435", 
+		"product_name": "Product Test XQ1899", 
+		"nextorbit_id": "NO1234",
+		"UPC/EAN" : "string" 
+		"product_description": "Beverages", 
+		"product_attrs": 
+				{
+		"category":"string",
+		"subcat": "string"
+		"price": floating-point, 
+		"UOM": "string",
+		"serving size": "string", 
+		"isFatFree": boolean, 
+		"Recycle Codes": "string",
+		"Keywords": "string"  
+				}
+	}, 
+		{..}
+	]
+
+
+Recommendation List
+-------------------
+
+
+
+**GET** /api/analysis/products/recommendations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Finds recommendations for a product or a list of products based on the request. The request body can be a single product or a list of products. We will need at least one field populated in the product information to be populated for this API to work.
+
+
+*Parameters*
+
+
+- ``number_of_recommendations`` [integer] :-    Number of objects returned per recommendation request. Defaults to 10.
+
+- ``product_id`` [string] :-    Number of objects returned per recommendation request. Defaults to 10. It can be empty.
+
+- ``nextorbit_id`` [string] :- NextOrbit designated ID for the product.
+
+- ``UPC/EAN`` [string]: UPC or EAN of the product if available.
+
+- ``category`` [string]: Any category if available.
+
+- ``subcategory`` [string]: Any sub-category if available.
+
+- ``uom`` [string]: Unit of measurement.
+
+- ``servingSize`` [string]: Serving size of the product.
+
+- ``keywords`` [string]: Keywords available for clustering.
+
+- ``isGlutenFree`` [boolean]: Is the product GlutenFree.
+
+
+- ``isFatFree`` [boolean]: Is the product FatFree.
+
+- ``isSugarFree`` [boolean]: Is the product SugarFree.
+
+
+Request Sample
+^^^^^^^^^^^^^^
+
+
+**Body**
+
+.. code-block ::javascript
+
+	[
+			{
+				"number_of_recommendations": 5,
+				"product_id": "1234",
+				"product_attrs":{
+					"category": "beverages",
+					"isSugarFree: True
+				}
+
+			}
+
+	]
+
+
+
+
+
+Response
+^^^^^^^^^
+
+Response packet will contain a JSON array of the list of products with information provided during product addition and an auto generated NextOrbit Identifier along with the product attributes specified.
+
+
+**Response Format**
+
+.. code-block:: javascript
+
+
+	[	
+		{
+			"orig_product_id": "1234",
+			"orig_product_name": "Test Product 1",
+			number_of_recommendations: 5
+			"reommendations":[
+				{..},
+				{..},
+				{..},
+				{..},
+				{..}
+			] 
+		}, 
+	]
+
+
+**Sample Response**
+
+.. code-block:: javascript
+
+
+	[	
+	{
+	"orig_product_id": "1234",
+	"orig_product_name": "Test Product 1",
+	number_of_recommendations: 5
+	"reommendations":[
+			{
+		product_id: "435", 
+		product_name: "Product Test XQ1899", 
+		nextorbit_id: "NO1234",
+		UPC/ EAN : "string" 
+		product_description: "Beverages", 
+		product_attrs: {
+		"category":"string",
+		"subcat": "string"
+		"price": floating-point, 
+		"uom": "string",
+		"servingSize": "string", 
+		"isFatFree": boolean, 
+		"recycleCodes": "string",
+		"keywords": "string" ,
+		"weight": floating-point,
+		"isGlutenFree":boolean 
+						},
+		{
+		product_id: "3456", 
+		product_name: "Product Test XQ1823", 
+		nextorbit_id: "NO12334",
+		UPC/ EAN : "string" 
+		product_description: "Beverages", 
+		product_attrs: {
+		"category":"string",
+		"subcat": "string"
+		"price": floating-point, 
+		"uom": "string",
+		"servingSize": "string", 
+		"isFatFree": boolean, 
+		"recycleCodes": "string",
+		"keywords": "string" ,
+		"weight": floating-point,
+		"isGlutenFree":boolean 
+						}
+		,{..}
+
+						]
+	}, 
+		{..}
+	]
+

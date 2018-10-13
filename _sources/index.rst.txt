@@ -1,0 +1,25 @@
+.. NextOrbit Docs documentation master file, created by
+   sphinx-quickstart on Sat Oct 13 14:19:18 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to NextOrbit Product Recommendation Engine API docs's documentation!
+============================================================================
+
+Product Recommendation Engine API is a RESTful API which enables programmatically controlling actions and leverage the power of the NextOrbit's Recommendation Engine.
+
+This document takes you through how to use various API build for the Recommendation Engine to achieve your business goals.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   requests
+   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

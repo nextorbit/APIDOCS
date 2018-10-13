@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API REFERENCE &mdash; NextOrbit Product Recommendation Engine API Docs  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="REQUEST - RESPONSE CYCLE" href="requests.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> NextOrbit Product Recommendation Engine API Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="requests.html">REQUEST - RESPONSE CYCLE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API REFERENCE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#product-list">Product List</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-api-analysis-products-offset"><strong>GET</strong> /api/analysis/products/{offset}</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request">Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#response">Response</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#recommendation-list">Recommendation List</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-api-analysis-products-recommendations"><strong>GET</strong> /api/analysis/products/recommendations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#request-sample">Request Sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NextOrbit Product Recommendation Engine API Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>API REFERENCE</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-reference">
+<h1>API REFERENCE<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="product-list">
+<h2>Product List<a class="headerlink" href="#product-list" title="Permalink to this headline">¶</a></h2>
+<p>List all products in the NextOrbit’s Servers.</p>
+<div class="section" id="get-api-analysis-products-offset">
+<h3><strong>GET</strong> /api/analysis/products/{offset}<a class="headerlink" href="#get-api-analysis-products-offset" title="Permalink to this headline">¶</a></h3>
+<p><em>Parameters</em></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> [integer]:-    Number of objects returned per page. If not provided it returns the complete list of products.</li>
+</ul>
+</div>
+<div class="section" id="request">
+<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -X GET</span>
+<span class="go">https://analysis.nextorbit.com/api/analysis/products/{offset}</span>
+<span class="go">  -H &#39;apikey: Your API_KEY&#39;</span>
+<span class="go">  -H &#39;apitoken: Your API_TOKEN&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<p>Response packet will contain a JSON array of the list of products with information provided during product addition and an auto generated NextOrbit Identifier along with the product attributes specified.</p>
+<p><strong>Response Format</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span>
+        <span class="nx">product_id</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="nx">product_name</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="nx">nextorbit_id</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="nx">product_description</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="nx">UPC</span><span class="o">/</span> <span class="nx">EAN</span> <span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">,</span>
+        <span class="nx">product_attrs</span><span class="o">:</span> <span class="nx">object</span>
+<span class="p">},</span>
+        <span class="p">{..}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Sample Response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span>
+        <span class="s2">&quot;product_id&quot;</span><span class="o">:</span> <span class="s2">&quot;435&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;product_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Product Test XQ1899&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nextorbit_id&quot;</span><span class="o">:</span> <span class="s2">&quot;NO1234&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;UPC/EAN&quot;</span> <span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="s2">&quot;product_description&quot;</span><span class="o">:</span> <span class="s2">&quot;Beverages&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;product_attrs&quot;</span><span class="o">:</span>
+                        <span class="p">{</span>
+        <span class="s2">&quot;category&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subcat&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="s2">&quot;price&quot;</span><span class="o">:</span> <span class="nx">floating</span><span class="o">-</span><span class="nx">point</span><span class="p">,</span>
+        <span class="s2">&quot;UOM&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;serving size&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;isFatFree&quot;</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">,</span>
+        <span class="s2">&quot;Recycle Codes&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Keywords&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+                        <span class="p">}</span>
+<span class="p">},</span>
+        <span class="p">{..}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="recommendation-list">
+<h2>Recommendation List<a class="headerlink" href="#recommendation-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-api-analysis-products-recommendations">
+<h3><strong>GET</strong> /api/analysis/products/recommendations<a class="headerlink" href="#get-api-analysis-products-recommendations" title="Permalink to this headline">¶</a></h3>
+<p>Finds recommendations for a product or a list of products based on the request. The request body can be a single product or a list of products. We will need at least one field populated in the product information to be populated for this API to work.</p>
+<p><em>Parameters</em></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">number_of_recommendations</span></code> [integer] :-    Number of objects returned per recommendation request. Defaults to 10.</li>
+<li><code class="docutils literal notranslate"><span class="pre">product_id</span></code> [string] :-    Number of objects returned per recommendation request. Defaults to 10. It can be empty.</li>
+<li><code class="docutils literal notranslate"><span class="pre">nextorbit_id</span></code> [string] :- NextOrbit designated ID for the product.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UPC/EAN</span></code> [string]: UPC or EAN of the product if available.</li>
+<li><code class="docutils literal notranslate"><span class="pre">category</span></code> [string]: Any category if available.</li>
+<li><code class="docutils literal notranslate"><span class="pre">subcategory</span></code> [string]: Any sub-category if available.</li>
+<li><code class="docutils literal notranslate"><span class="pre">uom</span></code> [string]: Unit of measurement.</li>
+<li><code class="docutils literal notranslate"><span class="pre">servingSize</span></code> [string]: Serving size of the product.</li>
+<li><code class="docutils literal notranslate"><span class="pre">keywords</span></code> [string]: Keywords available for clustering.</li>
+<li><code class="docutils literal notranslate"><span class="pre">isGlutenFree</span></code> [boolean]: Is the product GlutenFree.</li>
+<li><code class="docutils literal notranslate"><span class="pre">isFatFree</span></code> [boolean]: Is the product FatFree.</li>
+<li><code class="docutils literal notranslate"><span class="pre">isSugarFree</span></code> [boolean]: Is the product SugarFree.</li>
+</ul>
+</div>
+<div class="section" id="request-sample">
+<h3>Request Sample<a class="headerlink" href="#request-sample" title="Permalink to this headline">¶</a></h3>
+<p><strong>Body</strong></p>
+</div>
+<div class="section" id="id1">
+<h3>Response<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Response packet will contain a JSON array of the list of products with information provided during product addition and an auto generated NextOrbit Identifier along with the product attributes specified.</p>
+<p><strong>Response Format</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+        <span class="p">{</span>
+                <span class="s2">&quot;orig_product_id&quot;</span><span class="o">:</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;orig_product_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Test Product 1&quot;</span><span class="p">,</span>
+                <span class="nx">number_of_recommendations</span><span class="o">:</span> <span class="mi">5</span>
+                <span class="s2">&quot;reommendations&quot;</span><span class="o">:</span><span class="p">[</span>
+                        <span class="p">{..},</span>
+                        <span class="p">{..},</span>
+                        <span class="p">{..},</span>
+                        <span class="p">{..},</span>
+                        <span class="p">{..}</span>
+                <span class="p">]</span>
+        <span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Sample Response</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span>
+<span class="s2">&quot;orig_product_id&quot;</span><span class="o">:</span> <span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+<span class="s2">&quot;orig_product_name&quot;</span><span class="o">:</span> <span class="s2">&quot;Test Product 1&quot;</span><span class="p">,</span>
+<span class="nx">number_of_recommendations</span><span class="o">:</span> <span class="mi">5</span>
+<span class="s2">&quot;reommendations&quot;</span><span class="o">:</span><span class="p">[</span>
+                <span class="p">{</span>
+        <span class="nx">product_id</span><span class="o">:</span> <span class="s2">&quot;435&quot;</span><span class="p">,</span>
+        <span class="nx">product_name</span><span class="o">:</span> <span class="s2">&quot;Product Test XQ1899&quot;</span><span class="p">,</span>
+        <span class="nx">nextorbit_id</span><span class="o">:</span> <span class="s2">&quot;NO1234&quot;</span><span class="p">,</span>
+        <span class="nx">UPC</span><span class="o">/</span> <span class="nx">EAN</span> <span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="nx">product_description</span><span class="o">:</span> <span class="s2">&quot;Beverages&quot;</span><span class="p">,</span>
+        <span class="nx">product_attrs</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;category&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subcat&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="s2">&quot;price&quot;</span><span class="o">:</span> <span class="nx">floating</span><span class="o">-</span><span class="nx">point</span><span class="p">,</span>
+        <span class="s2">&quot;uom&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;servingSize&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;isFatFree&quot;</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">,</span>
+        <span class="s2">&quot;recycleCodes&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;keywords&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">,</span>
+        <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="nx">floating</span><span class="o">-</span><span class="nx">point</span><span class="p">,</span>
+        <span class="s2">&quot;isGlutenFree&quot;</span><span class="o">:</span><span class="kr">boolean</span>
+                                        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="nx">product_id</span><span class="o">:</span> <span class="s2">&quot;3456&quot;</span><span class="p">,</span>
+        <span class="nx">product_name</span><span class="o">:</span> <span class="s2">&quot;Product Test XQ1823&quot;</span><span class="p">,</span>
+        <span class="nx">nextorbit_id</span><span class="o">:</span> <span class="s2">&quot;NO12334&quot;</span><span class="p">,</span>
+        <span class="nx">UPC</span><span class="o">/</span> <span class="nx">EAN</span> <span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="nx">product_description</span><span class="o">:</span> <span class="s2">&quot;Beverages&quot;</span><span class="p">,</span>
+        <span class="nx">product_attrs</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;category&quot;</span><span class="o">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subcat&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+        <span class="s2">&quot;price&quot;</span><span class="o">:</span> <span class="nx">floating</span><span class="o">-</span><span class="nx">point</span><span class="p">,</span>
+        <span class="s2">&quot;uom&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;servingSize&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;isFatFree&quot;</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">,</span>
+        <span class="s2">&quot;recycleCodes&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;keywords&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">,</span>
+        <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="nx">floating</span><span class="o">-</span><span class="nx">point</span><span class="p">,</span>
+        <span class="s2">&quot;isGlutenFree&quot;</span><span class="o">:</span><span class="kr">boolean</span>
+                                        <span class="p">}</span>
+        <span class="p">,{..}</span>
+
+                                        <span class="p">]</span>
+<span class="p">},</span>
+        <span class="p">{..}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="requests.html" class="btn btn-neutral" title="REQUEST - RESPONSE CYCLE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, NextOrbit.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

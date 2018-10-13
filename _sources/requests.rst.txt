@@ -1,0 +1,52 @@
+REQUEST - RESPONSE CYCLE
+========================
+
+
+REQUESTS
+---------
+
+HTTP Requests can be made with any client library available native to a modern
+programming language. The requests must be made with HTTPS to ensure that your
+data is encrypted. The Recommendation Engine will handle your request and
+deliver an appropriate response.
+
+
++------------+------------+-----------------------------------+
+| GET        | Get Information from NextOrbit                 |
++------------+------------+-----------------------------------+
+| POST       | Send Information to NextOrbit                  |
++------------+------------+-----------------------------------+
+| PATCH      | Change Information already present.            |
++------------+------------+-----------------------------------+
+
+
+
+
+
+HTTP Statuses
+-------------
+
+
+When you make a request to the API, you will get a response including the data you want with standard HTTP statuses, including error codes.
+
+In case of an unusual event, such as a record cannot be created because of it already exists, the status code will have an error code. Besides that, the body of the request will contain additional information about the event to provide you the most conventional way to fix the flow. To make it clear, status codes are usually in between 2XX-5XX range
+
+
++------------+------------+-----------------------------------+
+| 2XX        | Success                                        |
++------------+------------+-----------------------------------+
+| 4XX        | Failure. Usually because a product is not found|
++------------+------------+-----------------------------------+
+| 5XX        | Failure. NextOrbit services might be ofline.   |
++------------+------------+-----------------------------------+
+
+
+Responses
+---------
+
+
+For each successfull and unsuccessfull request, a JSON-formatted response body will be sent back. If you make a request for a single object, say, for a Product, the resource root will be a single object containing the data you requested. If you request a collection, say, a group of Products, response body will contain a collection
+
+
+
+
