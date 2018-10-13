@@ -2,7 +2,7 @@ REQUEST - RESPONSE CYCLE
 ========================
 
 
-REQUESTS
+Requests
 ---------
 
 HTTP Requests can be made with any client library available native to a modern
